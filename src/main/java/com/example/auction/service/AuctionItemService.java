@@ -8,4 +8,5 @@ public interface AuctionItemService {
     List<AuctionItem> getAuctionItems();
     List<AuctionItem> getAuctionItemsByDescription(String description);
     List<AuctionItem> getAuctionItemsBySuccessfulBidLessThan(Double amount);
+    List<AuctionItem> getAuctionItemsByKeyword(String keyword);
 }

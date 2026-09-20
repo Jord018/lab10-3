@@ -28,4 +28,9 @@ public class AuctionItemServiceImpl implements AuctionItemService {
     public List<AuctionItem> getAuctionItemsBySuccessfulBidLessThan(Double amount) {
         return auctionItemDao.getAuctionItemsBySuccessfulBidLessThan(amount);
     }
+
+    @Override
+    public List<AuctionItem> getAuctionItemsByKeyword(String keyword) {
+        return auctionItemDao.getAuctionItemsByKeyword(keyword);
+    }
 }

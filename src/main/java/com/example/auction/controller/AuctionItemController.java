@@ -20,10 +20,13 @@ public class AuctionItemController {
 
     @GetMapping("/auction-items")
     public ResponseEntity<?> getAuctionItems(
+            @RequestParam(value = "keyword", required = false) String keyword,
             @RequestParam(value = "description", required = false) String description,
             @RequestParam(value = "successfulBidLessThan", required = false) Double successfulBidLessThan) {
         List<AuctionItem> items;
-        if (description != null) {
+        if (keyword != null) {
+            items = auctionItemService.getAuctionItemsByKeyword(keyword);
+        } else if (description != null) {
             items = auctionItemService.getAuctionItemsByDescription(description);
         } else if (successfulBidLessThan != null) {
             items = auctionItemService.getAuctionItemsBySuccessfulBidLessThan(successfulBidLessThan);
