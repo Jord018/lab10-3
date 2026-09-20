@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: auction
+  datasource:
+    url: jdbc:postgresql://localhost:5433/auctiondb
+    username: postgres
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: create
+  mvc:
+    problemdetails:
+      enabled: true
+  profiles:
+    active:
+        - db
+server:
+    port: 8082
