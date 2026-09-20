@@ -8,4 +8,6 @@ import com.example.auction.entity.AuctionItem;
 
 public interface AuctionItemRepository extends JpaRepository<AuctionItem, Long> {
     List<AuctionItem> findByDescriptionContainingIgnoreCase(String description);
+
+    List<AuctionItem> findBySuccessfulBid_AmountLessThan(Double amount);
 }

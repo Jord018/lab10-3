@@ -7,4 +7,5 @@ import com.example.auction.entity.AuctionItem;
 public interface AuctionItemDao {
     List<AuctionItem> getAuctionItems();
     List<AuctionItem> getAuctionItemsByDescription(String description);
+    List<AuctionItem> getAuctionItemsBySuccessfulBidLessThan(Double amount);
 }
